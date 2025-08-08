@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book a Call — EVRT</title>
+  <meta name="description" content="Book a 15-minute fit call with EVRT and get your project moving fast." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --brand:#111827; --accent:#22d3ee; }
+    html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+    .container-2xl { max-width: 1200px; }
+    iframe {
+      width: 100%;
+      height: 750px;
+      border: none;
+      border-radius: 1rem;
+      background-color: #000;
+    }
+  </style>
+</head>
+<body class="bg-black text-zinc-200">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-zinc-800/60 bg-black/70 backdrop-blur">
+    <div class="mx-auto container-2xl px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-xl font-extrabold tracking-tight">EVRT</a>
+      <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-zinc-700">Menu</button>
+      <nav id="nav" class="hidden md:flex gap-6 text-sm">
+        <a href="services.html" class="hover:text-white/90">Services</a>
+        <a href="work.html" class="hover:text-white/90">Work</a>
+        <a href="about.html" class="hover:text-white/90">About</a>
+        <a href="contact.html" class="hover:text-white/90">Contact</a>
+        <a href="book.html" class="text-cyan-300">Book a Call</a>
+      </nav>
+    </div>
+    <div id="mobile" class="hidden md:hidden border-t border-zinc-800/60 bg-black">
+      <div class="mx-auto container-2xl px-4 py-3 grid gap-2 text-sm">
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="book.html" class="rounded-lg px-3 py-2 bg-cyan-400/20 text-cyan-300 font-semibold border border-cyan-400/30">Book a Call</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-cyan-500/10 via-transparent to-transparent"></div>
+    <div class="mx-auto container-2xl px-4 py-20 md:py-28 relative">
+      <div class="max-w-3xl text-center mx-auto">
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+          Book Your <span class="text-cyan-300">15-Minute Fit Call</span>
+        </h1>
+        <p class="mt-6 text-lg text-zinc-300/90">
+          No pitch deck. No drawn-out meeting. Just a quick, focused conversation to map your challenge and the fastest path to done.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calendly Embed -->
+  <section class="mx-auto container-2xl px-4 pb-20">
+    <div class="rounded-2xl border border-zinc-800 p-4 md:p-6 bg-black/50 backdrop-blur">
+      <!-- Replace with your Calendly link -->
+      <iframe src="https://calendly.com/your-username/15min?hide_event_type_details=1&hide_gdpr_banner=1"></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-900">
+    <div class="mx-auto container-2xl px-4 py-10 text-sm text-zinc-500 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+      <span>© <span id="y"></span> EVRT. All rights reserved.</span>
+      <div class="flex gap-4">
+        <a href="mailto:hello@evrt.dev" class="hover:text-zinc-300">hello@evrt.dev</a>
+        <a href="#" class="hover:text-zinc-300">LinkedIn</a>
+        <a href="#" class="hover:text-zinc-300">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      document.getElementById('mobile').classList.toggle('hidden');
+    });
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
